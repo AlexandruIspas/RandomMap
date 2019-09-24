@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyProjects\\RandomMapAlgorithm\\RandomMap\\RandomMap.csproj",
+      "projectUniqueName": "D:\\MyProjects\\projFolder\\RandomMap\\RandomMap.csproj",
       "projectName": "RandomMap",
-      "projectPath": "D:\\MyProjects\\RandomMapAlgorithm\\RandomMap\\RandomMap.csproj",
+      "projectPath": "D:\\MyProjects\\projFolder\\RandomMap\\RandomMap.csproj",
       "packagesPath": "C:\\Users\\sasa.SASA-LT\\.nuget\\packages\\",
-      "outputPath": "D:\\MyProjects\\RandomMapAlgorithm\\RandomMap\\obj\\",
+      "outputPath": "D:\\MyProjects\\projFolder\\RandomMap\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
