@@ -1,2 +1,2 @@
-# RandomMap
-Count countries on random map
+# CountryMapAlgorithm
+Count counties on random map
