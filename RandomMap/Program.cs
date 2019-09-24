@@ -6,6 +6,7 @@ namespace RandomMap
     class Program
     {
         static int n, m, k;
+        static bool right, left, up, down;
         //----------------------------------------------
 
         static int[,] intitialArr;
@@ -22,7 +23,7 @@ namespace RandomMap
 
             for (int x = 0; x < n; x++)
             {
-                for (int y = 0; y < n; y++)
+                for (int y = 0; y < m; y++)
                 {
                     if (foundCountryArr[x, y] != -1)
                     {
@@ -33,6 +34,7 @@ namespace RandomMap
             }
 
             Console.WriteLine("Country count; " + countryCount);
+            Console.Read();
         }
 
         private static void GetParams()
@@ -82,6 +84,12 @@ namespace RandomMap
             CheckUP(countryN, x, y);
 
             CheckDOWN(countryN, x, y);
+
+            if (!up && !down && !right && !left)
+            {
+                foundCountryArr[x, y] = -1;
+                up = false; down = false; right = false; left = false;
+            }
         }
 
         private static void CheckUP(int countryN, int x, int y)
@@ -91,10 +99,11 @@ namespace RandomMap
 
             if (CheckCell(newX, newY))
             {
-                if (intitialArr[newX, newY] == countryN)
+                if (intitialArr[newX, newY] == countryN && foundCountryArr[newX, newY] != -1)
                 {
                     foundCountryArr[x, y] = -1;
                     ParseCountry(countryN, newX, newY);
+                    up = true;
                 }
             }
         }
@@ -106,10 +115,11 @@ namespace RandomMap
 
             if (CheckCell(newX, newY))
             {
-                if (intitialArr[newX, newY] == countryN)
+                if (intitialArr[newX, newY] == countryN && foundCountryArr[newX, newY] != -1)
                 {
                     foundCountryArr[x, y] = -1;
                     ParseCountry(countryN, newX, newY);
+                    down = true;
                 }
             }
         }
@@ -121,10 +131,11 @@ namespace RandomMap
 
             if (CheckCell(newX, newY))
             {
-                if (intitialArr[newX, newY] == countryN)
+                if (intitialArr[newX, newY] == countryN && foundCountryArr[newX, newY] != -1)
                 {
                     foundCountryArr[x, y] = -1;
                     ParseCountry(countryN, newX, newY);
+                    right = true;
                 }
             }
         }
@@ -136,10 +147,11 @@ namespace RandomMap
 
             if (CheckCell(newX, newY))
             {
-                if (intitialArr[newX, newY] == countryN)
+                if (intitialArr[newX, newY] == countryN && foundCountryArr[newX, newY] != -1)
                 {
                     foundCountryArr[x, y] = -1;
                     ParseCountry(countryN, newX, newY);
+                    left = true;
                 }
             }
         }
@@ -161,7 +173,7 @@ namespace RandomMap
 
         private static void Print()
         {
-
+            
         }
     }
 }
